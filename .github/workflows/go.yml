@@ -3,8 +3,9 @@ name: Go
 on:
   push:
     branches: [ master ]
-  pull_request:
-    branches: [ master ]
+
+env:
+  TAG: ${{ github.sha }}
 
 jobs:
 
