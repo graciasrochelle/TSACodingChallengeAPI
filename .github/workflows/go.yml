@@ -6,7 +6,7 @@ on:
 
 env:
   TAG: ${{ github.sha }}
-  CONTAINERREGISTRY: ${{ secrets.CONTAINERREGISTRY }} 
+  CONTAINERREGISTRY: ${{ secrets.CONTAINERREGISTRY }}
   
 jobs:
 
@@ -32,4 +32,4 @@ jobs:
     - name: push image  
       run: |
         echo 'Pushing image'
-        docker push $CONTAINERREGISTRYUSERNAME/tsacodingchallengeapi:$TAG
+        docker push $CONTAINERREGISTRY/tsacodingchallengeapi:$TAG
