@@ -6,7 +6,7 @@ import (
 )
 
 func NewEndpoint() *common.Endpoint {
-	return common.NewEndpoint(Handle, nil, Encode, nil)
+	return common.NewEndpoint(Handle, nil, Encode)
 }
 
 func Handle(r *http.Request, params common.Parameters) (response common.ResponseType, statusCode int, err error) {

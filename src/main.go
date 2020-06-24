@@ -1,7 +1,7 @@
 package main
 
 import (
-	"TSACodingChallengeAPI/src/shared"
+	"TSACodingChallengeAPI/src/common"
 	"net/http"
 	"os"
 )
@@ -15,14 +15,14 @@ func main() {
 	}
 
 	// Init config
-	config := shared.NewConfig()
+	config := common.NewConfig()
 
 	c := initRouter(*config)
 	println("Starting service at " + port)
 	panic(http.ListenAndServe(":"+port, c))
 }
 
-func initRouter(config shared.Config) *Chain {
+func initRouter(config common.Config) *Chain {
 	router := NewRouter(config)
 
 	c := NewChain()

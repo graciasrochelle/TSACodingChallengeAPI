@@ -15,11 +15,10 @@ type Endpoint struct {
 	handler Handler
 	binder  Binder
 	encoder ResponseEncoder
-	logger  ErrorLogger
 }
 
-func NewEndpoint(handler Handler, binder Binder, encoder ResponseEncoder, logger ErrorLogger) *Endpoint {
-	return &Endpoint{handler, binder, encoder, logger}
+func NewEndpoint(handler Handler, binder Binder, encoder ResponseEncoder) *Endpoint {
+	return &Endpoint{handler, binder, encoder}
 }
 
 func GetHandler(api *Endpoint) http.HandlerFunc {
@@ -43,7 +42,6 @@ func GetHandler(api *Endpoint) http.HandlerFunc {
 			if statusCode < http.StatusBadRequest {
 				statusCode = http.StatusInternalServerError
 			}
-			api.logger(r, statusCode, e)
 			newErrorResponse := ErrorResponse{e.Error()}
 			api.encoder(w, statusCode, newErrorResponse)
 		} else {
