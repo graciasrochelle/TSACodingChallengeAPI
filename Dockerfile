@@ -1,4 +1,4 @@
-FROM golang:1.14
+FROM golang:1.14.0-alpine AS builder
 
 RUN apk update && apk upgrade && apk add --no-cache bash git openssh ca-certificates
 
