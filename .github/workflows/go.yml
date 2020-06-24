@@ -28,3 +28,8 @@ jobs:
       run: |
         echo 'Building image'
         docker build  -t $CONTAINERREGISTRY/tsacodingchallengeapi:$TAG  .
+
+    - name: push image  
+      run: |
+        echo 'Pushing image'
+        docker push $CONTAINERREGISTRYUSERNAME/tsacodingchallengeapi:$TAG
