@@ -25,7 +25,10 @@ func main() {
 
 func initRouter(config common.Config) *Chain {
 	storageService := storage.NewService(config)
-	storageService.CreateConnectionPool()
+	e := storageService.CreateConnectionPool()
+	if e != nil {
+		cacheService := cacheService.NewService(config)
+	}
 
 	router := NewRouter(config, storageService)
 

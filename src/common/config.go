@@ -10,7 +10,9 @@ import (
 )
 
 type Config struct {
-	ConnString string
+	ConnString   string           `json:"connString"`
+	Contacts     []SQLContact     `json:"contacts"`
+	PhoneNumbers []SQLPhoneNumber `json:"phoneNumbers"`
 }
 
 func NewConfig() *Config {
@@ -22,6 +24,7 @@ func NewConfig() *Config {
 func configure(config *Config) {
 	config.Load("./configs")
 	config.Load("./secrets")
+	config.Load("./references")
 }
 
 // This config loader can only accept json file
