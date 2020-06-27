@@ -20,7 +20,6 @@ func Handle(s Service) func(r *http.Request, params common.Parameters) (response
 }
 
 func Encoder(w http.ResponseWriter, httpStatus int, response common.ResponseType) error {
-	w.Header().Set("Cache-Control", "no-transform, max-age=1800")
 	common.EncodeJsonResponse(w, httpStatus, response)
 	return nil
 }

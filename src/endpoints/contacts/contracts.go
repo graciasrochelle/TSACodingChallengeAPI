@@ -1,7 +1,8 @@
 package contacts
 
 type ContactsResponse struct {
-	Contacts []Contact `json:"contacts"`
+	Contacts              []Contact `json:"contacts"`
+	DisplayContactDetails []string  `json:"displayContactDetails"`
 }
 
 type Contact struct {

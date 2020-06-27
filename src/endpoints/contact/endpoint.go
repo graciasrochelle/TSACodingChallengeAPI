@@ -20,7 +20,7 @@ func Bind(r *http.Request) (params common.Parameters, err error) {
 	if e != nil {
 		return nil, e
 	}
-	return cr, validate(cr)
+	return cr, nil
 }
 
 func Handle(s Service) func(r *http.Request, params common.Parameters) (response common.ResponseType, statusCode int, err error) {
@@ -30,12 +30,6 @@ func Handle(s Service) func(r *http.Request, params common.Parameters) (response
 }
 
 func Encoder(w http.ResponseWriter, httpStatus int, response common.ResponseType) error {
-	w.Header().Set("Cache-Control", "no-transform, max-age=1800")
 	common.EncodeJsonResponse(w, httpStatus, response)
-	return nil
-}
-
-func validate(req ContactRequest) error {
-
 	return nil
 }
