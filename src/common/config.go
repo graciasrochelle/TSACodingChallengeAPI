@@ -10,9 +10,10 @@ import (
 )
 
 type Config struct {
-	ConnString   string           `json:"connString"`
-	Contacts     []SQLContact     `json:"contacts"`
-	PhoneNumbers []SQLPhoneNumber `json:"phoneNumbers"`
+	ConnString         string `json:"connString"`
+	UseInMemoryStorage bool
+	Contacts           []SQLContact     `json:"contacts"`
+	PhoneNumbers       []SQLPhoneNumber `json:"phoneNumbers"`
 }
 
 func NewConfig() *Config {

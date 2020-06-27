@@ -20,9 +20,9 @@ type Route struct {
 
 type Routes []Route
 
-func NewRouter(config common.Config, storageService storage.Service) *mux.Router {
+func NewRouter(config common.Config) *mux.Router {
 	router := mux.NewRouter().StrictSlash(true)
-	routes := getRoutes(config, storageService)
+	routes := getRoutes(config)
 
 	for _, route := range *routes {
 		router.
@@ -34,7 +34,16 @@ func NewRouter(config common.Config, storageService storage.Service) *mux.Router
 	return router
 }
 
-func getRoutes(config common.Config, storageService storage.Service) *Routes {
+func getRoutes(config common.Config) *Routes {
+
+	inMemoryService := storage.NewInMemoryService(config)
+	sqlService := storage.NewSQLService(config)
+	e := sqlService.CreateConnectionPool()
+	if e != nil {
+		config.UseInMemoryStorage = true
+	}
+	storageService := storage.NewService(config, inMemoryService, sqlService)
+
 	contactsService := contacts.NewService(config, storageService)
 	contactService := contact.NewService(config, storageService)
 

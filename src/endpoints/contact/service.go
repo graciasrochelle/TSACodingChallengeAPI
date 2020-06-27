@@ -24,7 +24,7 @@ func NewService(config common.Config, storageService storage.Service) Service {
 
 func (s *service) Post(request ContactRequest) (resp ContactResponse, status int, e error) {
 	contactID := getUUID()
-	contact := storage.SQLContact{
+	contact := common.SQLContact{
 		ContactID: contactID,
 		FullName:  utils.NameToTitleCase(request.FullName),
 		Email:     request.Email,
@@ -37,7 +37,7 @@ func (s *service) Post(request ContactRequest) (resp ContactResponse, status int
 	}
 
 	for _, p := range request.PhoneNumbers {
-		phoneNumber := storage.SQLPhoneNumber{
+		phoneNumber := common.SQLPhoneNumber{
 			PhoneID:     getUUID(),
 			ContactID:   contactID,
 			PhoneNumber: utils.NormalizePhoneNumber(p),
