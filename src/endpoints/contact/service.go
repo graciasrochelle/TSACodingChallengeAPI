@@ -23,7 +23,7 @@ func NewService(config common.Config, storageService storage.Service) Service {
 }
 
 func (s *service) Post(request ContactRequest) (resp ContactResponse, status int, e error) {
-	contactID := uuid.Must(uuid.NewV4()).String()
+	contactID := getUUID()
 	contact := storage.SQLContact{
 		ContactID: contactID,
 		FullName:  utils.NameToTitleCase(request.FullName),
@@ -38,7 +38,7 @@ func (s *service) Post(request ContactRequest) (resp ContactResponse, status int
 
 	for _, p := range request.PhoneNumbers {
 		phoneNumber := storage.SQLPhoneNumber{
-			PhoneID:     uuid.Must(uuid.NewV4()).String(),
+			PhoneID:     getUUID(),
 			ContactID:   contactID,
 			PhoneNumber: utils.NormalizePhoneNumber(p),
 		}
@@ -50,4 +50,8 @@ func (s *service) Post(request ContactRequest) (resp ContactResponse, status int
 	}
 
 	return resp, http.StatusCreated, nil
+}
+
+func getUUID() string {
+	return uuid.Must(uuid.NewV4()).String()
 }
