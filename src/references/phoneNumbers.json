@@ -1,0 +1,34 @@
+{
+	"phoneNumbers": [
+		{
+			"phoneId": "1e657e1c-ee38-4dfa-b5a2-1649c61f990f",
+			"contactId": "5755e520-9fc1-4ca2-ac01-16be79e1e422",
+			"phoneNumber": "1800728069"
+		},
+		{
+			"phoneId": "3fb621fd-f9fa-4f24-9be9-8d29719e6d2a",
+			"contactId": "5755e520-9fc1-4ca2-ac01-16be79e1e422",
+			"phoneNumber": "0385786688"
+		},
+		{
+			"phoneId": "8fc51890-05b3-4dc9-aee0-af34ff8fca39",
+			"contactId": "39358d6f-88a0-42d4-8b8c-26719d7a9b5f",
+			"phoneNumber": "+61488224568"
+		},
+		{
+			"phoneId": "b3ee7066-cc34-4189-9d07-a7da8275f355",
+			"contactId": "6e39dd11-113b-43ae-8032-090da40c7974",
+			"phoneNumber": "+6139888998"
+		},
+		{
+			"phoneId": "ea986cee-7ab1-45b5-b3fe-b8b8a8890c07",
+			"contactId": "39358d6f-88a0-42d4-8b8c-26719d7a9b5f",
+			"phoneNumber": "0393337119"
+		},
+		{
+			"phoneId": "ee2228a0-3f42-4095-b97d-a1e5c4d4740d",
+			"contactId": "39358d6f-88a0-42d4-8b8c-26719d7a9b5f",
+			"phoneNumber": "0488445688"
+		}
+	]
+}

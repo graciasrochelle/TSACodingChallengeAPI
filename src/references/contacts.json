@@ -1,0 +1,19 @@
+{
+	"contacts": [
+		{
+			"contactId": "39358d6f-88a0-42d4-8b8c-26719d7a9b5f",
+			"fullName": "Radia Perlman",
+			"email": "rper1001@mit.edu"
+		},
+		{
+			"contactId": "5755e520-9fc1-4ca2-ac01-16be79e1e422",
+			"fullName": "Alex Bell",
+			"email": "alex@bell-labs.com"
+		},
+		{
+			"contactId": "6e39dd11-113b-43ae-8032-090da40c7974",
+			"fullName": "Fredrik Idestam",
+			"email": ""
+		}
+	]
+}
