@@ -22,9 +22,3 @@ func EncodeJsonResponse(w http.ResponseWriter, status int, response ResponseType
 	WriteWithPayload(w, resp)
 	return nil
 }
-
-func AddHeadersToResponse(w http.ResponseWriter, headers map[string]string) {
-	for k, v := range headers {
-		w.Header().Set(k, v)
-	}
-}

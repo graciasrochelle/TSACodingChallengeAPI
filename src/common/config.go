@@ -10,6 +10,7 @@ import (
 )
 
 type Config struct {
+	ConnString string
 }
 
 func NewConfig() *Config {

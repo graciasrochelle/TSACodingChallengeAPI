@@ -39,9 +39,6 @@ func GetHandler(api *Endpoint) http.HandlerFunc {
 		}
 
 		if e != nil {
-			if statusCode < http.StatusBadRequest {
-				statusCode = http.StatusInternalServerError
-			}
 			newErrorResponse := ErrorResponse{e.Error()}
 			api.encoder(w, statusCode, newErrorResponse)
 		} else {

@@ -2,6 +2,8 @@ package main
 
 import (
 	"TSACodingChallengeAPI/src/common"
+	"TSACodingChallengeAPI/src/middlewares"
+	"TSACodingChallengeAPI/src/storage"
 	"net/http"
 	"os"
 )
@@ -23,9 +25,13 @@ func main() {
 }
 
 func initRouter(config common.Config) *Chain {
-	router := NewRouter(config)
+	storageService := storage.NewService(config)
+	storageService.CreateConnectionPool()
+
+	router := NewRouter(config, storageService)
 
 	c := NewChain()
+	c.UseChainHandler(middlewares.NewErrorMiddleware())
 	c.Use(router)
 	c.Build()
 

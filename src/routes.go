@@ -5,6 +5,7 @@ import (
 	"TSACodingChallengeAPI/src/endpoints/contact"
 	"TSACodingChallengeAPI/src/endpoints/contacts"
 	"TSACodingChallengeAPI/src/endpoints/healthCheck"
+	"TSACodingChallengeAPI/src/storage"
 	"net/http"
 
 	"github.com/gorilla/mux"
@@ -19,9 +20,9 @@ type Route struct {
 
 type Routes []Route
 
-func NewRouter(config common.Config) *mux.Router {
+func NewRouter(config common.Config, storageService storage.Service) *mux.Router {
 	router := mux.NewRouter().StrictSlash(true)
-	routes := getRoutes(config)
+	routes := getRoutes(config, storageService)
 
 	for _, route := range *routes {
 		router.
@@ -33,15 +34,15 @@ func NewRouter(config common.Config) *mux.Router {
 	return router
 }
 
-func getRoutes(config common.Config) *Routes {
-	contactsService := contacts.NewService(config)
-	contactService := contact.NewService(config)
+func getRoutes(config common.Config, storageService storage.Service) *Routes {
+	contactsService := contacts.NewService(config, storageService)
+	contactService := contact.NewService(config, storageService)
 
 	return &Routes{
 		Route{
 			"Health Check",
 			"GET",
-			"/",
+			"/api",
 			common.GetHandler(healthCheck.NewEndpoint()),
 		},
 		// swagger:route GET /contacts
@@ -62,7 +63,7 @@ func getRoutes(config common.Config) *Routes {
 		Route{
 			"Get list of all contacts",
 			"GET",
-			"/contacts",
+			"/api/contacts",
 			common.GetHandler(contacts.NewEndpoint(contactsService)),
 		},
 		// swagger:route POST /contact ContactRequest
@@ -82,7 +83,7 @@ func getRoutes(config common.Config) *Routes {
 		Route{
 			"Create or Update contact",
 			"POST",
-			"/contact",
+			"/api/contact",
 			common.GetHandler(contact.NewEndpoint(contactService)),
 		},
 	}
