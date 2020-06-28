@@ -2,12 +2,33 @@
 
 
 [[projects]]
-  digest = "1:05eebdd5727fea23083fce0d98d307d70c86baed644178e81608aaa9f09ea469"
-  name = "github.com/Sirupsen/logrus"
+  branch = "master"
+  digest = "1:973f43670b6a99eff066a59ecea17d8d00a3c49e090ed8724202ce478bdd976f"
+  name = "github.com/denisenkom/go-mssqldb"
+  packages = [
+    ".",
+    "internal/cp",
+    "internal/decimal",
+    "internal/querytext",
+  ]
+  pruneopts = "UT"
+  revision = "b91950f658ecd54342d783495e1aadf48a55e967"
+
+[[projects]]
+  digest = "1:73770491417b7cb646b28610eec6481187aba7b5c3703da0d42f8d590d016f5f"
+  name = "github.com/gofrs/uuid"
   packages = ["."]
   pruneopts = "UT"
-  revision = "60c74ad9be0d874af0ab0daef6ab07c5c5911f0d"
-  version = "v1.6.0"
+  revision = "abfe1881e60ef34074c1b8d8c63b42565c356ed6"
+  version = "v3.3.0"
+
+[[projects]]
+  branch = "master"
+  digest = "1:914bae0d7af57d7f9c2c8eff864071e57c3effebd78eeef26eff4afb0372ed2f"
+  name = "github.com/golang-sql/civil"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "cb61b32ac6fe84d34b81730175f91965e43d0f90"
 
 [[projects]]
   digest = "1:25ebe6496abb289ef977c081b2d49f56dd97c32db4ca083d37f95923909ced02"
@@ -18,29 +39,19 @@
   version = "v1.7.4"
 
 [[projects]]
-  digest = "1:09cb61dc19af93deae01587e2fdb1c081e0bf48f1a5ad5fa24f48750dc57dce8"
-  name = "github.com/konsorten/go-windows-terminal-sequences"
-  packages = ["."]
-  pruneopts = "UT"
-  revision = "edb144dfd453055e1e49a3d8b410a660b5a87613"
-  version = "v1.0.3"
-
-[[projects]]
   branch = "master"
-  digest = "1:3ab255fc8d13040be256146dee8368ef23c9671e13e828962c57124612bfcae7"
-  name = "golang.org/x/sys"
-  packages = [
-    "internal/unsafeheader",
-    "unix",
-  ]
+  digest = "1:100a36e16f77aaad7c9144ab26bcefb92c5b6ebed5b137f935fdc11f541fa5b8"
+  name = "golang.org/x/crypto"
+  packages = ["md4"]
   pruneopts = "UT"
-  revision = "ed371f2e16b4b305ee99df548828de367527b76b"
+  revision = "75b288015ac94e66e3d6715fb68a9b41bf046ec2"
 
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
   input-imports = [
-    "github.com/Sirupsen/logrus",
+    "github.com/denisenkom/go-mssqldb",
+    "github.com/gofrs/uuid",
     "github.com/gorilla/mux",
   ]
   solver-name = "gps-cdcl"

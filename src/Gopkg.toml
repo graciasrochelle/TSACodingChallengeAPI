@@ -26,8 +26,12 @@
 
 
 [[constraint]]
-  name = "github.com/Sirupsen/logrus"
-  version = "1.6.0"
+  branch = "master"
+  name = "github.com/denisenkom/go-mssqldb"
+
+[[constraint]]
+  name = "github.com/gofrs/uuid"
+  version = "3.3.0"
 
 [[constraint]]
   name = "github.com/gorilla/mux"
