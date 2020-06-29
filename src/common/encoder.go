@@ -16,7 +16,7 @@ func EncodeJsonResponse(w http.ResponseWriter, status int, response ResponseType
 	w.Header().Set("Content-Type", "application/json; charset=utf-8")
 	w.Header().Set("Access-Control-Allow-Methods", "POST, GET")
 	w.Header().Set("Access-Control-Allow-Headers", "Content-Type,access-control-allow-origin, access-control-allow-headers")
-	w.Header().Set("Access-Control-Allow-Origin", "https://graciasrochelle.github.io")
+	w.Header().Set("Access-Control-Allow-Origin", "http://graciasrochelle.github.io")
 	w.WriteHeader(status)
 	resp, e := json.Marshal(response)
 	if e != nil {

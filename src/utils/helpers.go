@@ -2,6 +2,7 @@ package utils
 
 import (
 	"bytes"
+	"regexp"
 	"strings"
 )
 
@@ -16,7 +17,13 @@ func NormalizePhoneNumber(phone string) string {
 	return buf.String()
 }
 
-// NameToTitle capitalizes each word
+// NameToTitleCase capitalizes each word
 func NameToTitleCase(name string) string {
 	return strings.Title(strings.ToLower(name))
+}
+
+// IsPossibleNumber checkes if phone number is valid for AU
+func IsPossibleNumber(number string) bool {
+	match, _ := regexp.MatchString("(\\(+61\\)|\\+61|\\(0[1-9]\\)|0[1-9])?( ?-?[0-9]){6,9}", number)
+	return match
 }
