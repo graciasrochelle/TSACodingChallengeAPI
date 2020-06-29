@@ -59,7 +59,7 @@ func TestAddContactService(t *testing.T) {
 		}
 
 		if tp.status != status {
-			t.Errorf("For test case <%s>, Expected status code is: %s, but actual status code is:%s.", tc, tp.status, status)
+			t.Errorf("For test case <%s>, Expected status code is: %d, but actual status code is:%d.", tc, tp.status, status)
 		}
 	}
 }
