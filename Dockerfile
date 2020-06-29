@@ -19,6 +19,9 @@ FROM scratch
 COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/ca-certificates.crt
 
 COPY --from=builder /app  /app
+COPY --from=builder /go/src/TSACodingChallengeAPI/src/references/phoneNumbers.json  /references/phoneNumbers.json
+COPY --from=builder  /go/src/TSACodingChallengeAPI/src/references/contacts.json  /references/contacts.json
+COPY --from=builder  /go/src/TSACodingChallengeAPI/src/configs/config.json  /configs/config.json
 
 EXPOSE 10010
 
