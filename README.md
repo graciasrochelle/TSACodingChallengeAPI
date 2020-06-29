@@ -8,6 +8,8 @@ A simple GoLang RESTful API that accepts and persists contact information using 
 
 ## Usage
 
+![API Link](http://ec2-3-25-144-195.ap-southeast-2.compute.amazonaws.com:10010/api)
+
 ### Get list of Contacts
 
 #### Request
