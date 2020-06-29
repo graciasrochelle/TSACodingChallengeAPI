@@ -19,9 +19,9 @@ A simple GoLang RESTful API that accepts and persists contact information using 
 ```
 Responses:
     200: ContactsResponse - array of contacts
-	400: BadRequestError
-	500: InteralServiceError
-	502: BadGatewayError
+    400: BadRequestError
+    500: InteralServiceError
+    502: BadGatewayError
 ```
 
 ### Create a new Contact
