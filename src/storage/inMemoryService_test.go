@@ -43,7 +43,7 @@ func TestInMemryStorageService(t *testing.T) {
 				PhoneNumber: "+61 (0)414 570776",
 			},
 			expGetContacts: common.Contacts{
-				[]common.SQLContact{
+				Contacts: []common.SQLContact{
 					common.SQLContact{
 						ContactID: "39358d6f-88a0-42d4-8b8c-26719d7a9b5f",
 						FullName:  "Radia Perlman",
@@ -57,7 +57,7 @@ func TestInMemryStorageService(t *testing.T) {
 				},
 			},
 			expGetPhoneNumbers: common.PhoneNumbers{
-				[]common.SQLPhoneNumber{
+				PhoneNumbers: []common.SQLPhoneNumber{
 					common.SQLPhoneNumber{
 						PhoneID:     "39458d6f-88a0",
 						ContactID:   "random-uuid",
