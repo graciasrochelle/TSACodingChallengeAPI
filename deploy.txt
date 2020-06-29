@@ -1,0 +1,5 @@
+git pull
+docker build -t tsacodingchallenge .
+docker kill --signal=SIGTERM <container-id>
+docker rm -v tda
+docker run --publish 10010:10010 --detach --name tda tsacodingchallenge:latest
