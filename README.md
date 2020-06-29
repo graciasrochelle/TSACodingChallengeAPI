@@ -8,7 +8,7 @@ A simple GoLang RESTful API that accepts and persists contact information using 
 
 ## Usage
 
-![API Link](http://ec2-3-25-144-195.ap-southeast-2.compute.amazonaws.com:10010/api)
+[API Link](http://ec2-3-25-144-195.ap-southeast-2.compute.amazonaws.com:10010/api)
 
 ### Get list of Contacts
 
@@ -57,7 +57,7 @@ The api is designed using factory pattern in Go-Lang. It also uses SQL relationa
 
 A fall back mechanism is added if this database is not available to store and read contacts from an file that is read at run time.
 
-This application is deployed on AWS EC2 instance.
+This application is deployed on AWS EC2 instance. [API Link](http://ec2-3-25-144-195.ap-southeast-2.compute.amazonaws.com:10010/api)
 
 This api is consumed by a [react web application](https://github.com/graciasrochelle/TSACodingChallengeReactApp/blob/master/README.md)
 
