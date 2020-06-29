@@ -57,6 +57,8 @@ A fall back mechanism is added if this database is not available to store and re
 
 This application is deployed on AWS EC2 instance.
 
+This api is consumed by a [react web application](https://github.com/graciasrochelle/TSACodingChallengeReactApp/blob/master/README.md)
+
 ### Possible extension
 
 1. _GitHub actions_ is integrated to run tests. The deployment of this project to AWS EC2 instance is manual and can be automated using github actions.
